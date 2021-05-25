@@ -19,15 +19,17 @@ client.commands = new Enmap();
 
 //Logging
 client.on('messageDelete', async message => {
+    const log = client.channels.cache.get(config.DiscordLogs);
     var embed = new Discord.MessageEmbed().setColor(`${config.embedColor}`).setAuthor('Message Deleted', message.guild.iconURL).addField('User', message.author.tag).addField('Message', message.content).addField('Channel', message.channel).setTimestamp()
     if (message.author == client.user.id) return;
-    else client.channels.cache.get(config.channelLogs).send(embed);
+    else return log.send(embed)
 });
 
 client.on("messageUpdate", function(oldMessage, newMessage) {
+    const log = client.channels.cache.get(config.DiscordLogs);
     var embed = new Discord.MessageEmbed().setColor(`${config.embedColor}`).setAuthor(`Message Edited`).setDescription(`**User:** \n${oldMessage.author.tag}\n\n**Old Message:** \n${oldMessage.content}\n\n**New Message:** \n${newMessage.content}`).addField('Channel', `${oldMessage.channel}`).setTimestamp()
     if (oldMessage.author == client.user.id) return;
-    else client.channels.cache.get(config.channelLogs).send(embed);
+    else return log.send(embed)
 });
 
 //Event Handler

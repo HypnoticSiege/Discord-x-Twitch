@@ -4,7 +4,7 @@ const config = require("../config");
 const vcs = new Map()
 
 module.exports = (client, oldState, newState) => {
-    const log = client.channels.cache.get(config.voiceLogs);
+    const log = client.channels.cache.get(config.DiscordLogs);
     if (!log) return
     const embed = new Discord.MessageEmbed()
         .setColor(`${config.embedColor}`)

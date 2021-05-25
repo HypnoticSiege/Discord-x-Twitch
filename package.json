@@ -1,21 +1,27 @@
 {
-  "name": "hypnoticbot",
+  "name": "twitch-x-discord",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Multi-Bot using Discord.js and tmi.js to enhance logging, and streamers needs!",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "me",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HypnoticSiege/Discord-x-Twitch.git"
+  },
+  "author": "HypnoticSiege",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HypnoticSiege/Discord-x-Twitch/issues"
+  },
+  "homepage": "https://github.com/HypnoticSiege/Discord-x-Twitch#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "discord-webhook-node": "^1.1.8",
     "discord.js": "^12.5.3",
     "enmap": "^5.8.5",
     "fs": "0.0.1-security",
     "parse-duration": "^1.0.0",
-    "tmi.js": "^1.8.3",
-    "twitch-bot": "^1.3.5"
+    "tmi.js": "^1.8.3"
   }
 }

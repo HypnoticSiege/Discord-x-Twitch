@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("../config")
 module.exports = (client, channel) => {
-    const log = client.channels.cache.get(config.channelLogs);
+    const log = client.channels.cache.get(config.DiscordLogs);
     if (!log || !channel.guild) return
 
     const embed = new Discord.MessageEmbed()

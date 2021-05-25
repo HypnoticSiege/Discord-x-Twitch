@@ -5,8 +5,6 @@ const colors = require('colors/safe')
 
 //Twitch Bot Dependancies
 const tmi = require("tmi.js");
-const { Webhook, MessageBuilder } = require('discord-webhook-node');
-const hook = new Webhook(config.webhookURL);
 
 //Discord Bot Dependancies
 const Discord = require('discord.js');
@@ -25,11 +23,13 @@ client.on('messageDelete', async message => {
     if (message.author == client.user.id) return;
     else client.channels.cache.get(config.channelLogs).send(embed);
 });
+
 client.on("messageUpdate", function(oldMessage, newMessage) {
     var embed = new Discord.MessageEmbed().setColor(`${config.embedColor}`).setAuthor(`Message Edited`).setDescription(`**User:** \n${oldMessage.author.tag}\n\n**Old Message:** \n${oldMessage.content}\n\n**New Message:** \n${newMessage.content}`).addField('Channel', `${oldMessage.channel}`).setTimestamp()
     if (oldMessage.author == client.user.id) return;
     else client.channels.cache.get(config.channelLogs).send(embed);
 });
+
 //Event Handler
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
@@ -40,6 +40,7 @@ fs.readdir("./events/", (err, files) => {
         console.log(colors.green(`${eventName} Event ✅`));
     });
 });
+
 //Command Handler
 fs.readdir("./commands/", (err, files) => {
     if (err) return console.error(err);
@@ -92,14 +93,16 @@ twitchclient.on("chat", async(channel, user, message, self) => {
             let commandFile = require(`./twitch_cmds/${cmd}.js`)
             commandFile.run(twitchclient, message, args, user, channel, self)
         } catch (err) {}
-        //Webhook Sender
-        const embed = new MessageBuilder()
+
+        //Chat Logger
+        const log = client.channels.cache.get(config.TwitchLogs);
+        const ChatEmbed = new Discord.MessageEmbed()
             .setAuthor(`Message Sent by ${user.username}`)
             .setTitle(`New Message on ${channel}'s Channel`)
             .addField('Message Content:', `${message}`)
             .setFooter('Message Sent')
+            .setColor(config.embedColor)
             .setTimestamp();
-        hook.setUsername(`Twitch Logs for ${channel}`);
-        hook.send(embed);
+        return log.send(ChatEmbed)
     })
     //Twitch Bot End

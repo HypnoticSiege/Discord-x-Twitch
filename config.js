@@ -1,17 +1,33 @@
 module.exports = {
-    //Twitch Bot Configuration
-    username: 'hypnoticsiege',
-    //Get yours at https://twitchapps.com/tmi/
-    oauth: 'oauth:YOURTOKEN',
-    channels: ['hypnoticsiege'],
+    discord: {
+        token: "NzgxMTY0MjE4NjYxMzM5MTc2.X75p3w.GStgV70ZV98-lz5QTK7qBQbvJJo", //Get yours at https://discord.com/developers/applications/
 
-    //Discord Configuration
-    //Get yours at https://discord.com/developers/applications/
-    token: "YOUR_TOKEN_HERE",
-    DiscordLogs: "829169768703459338",
-    TwitchLogs: "829169768703459338",
+        logs: {
+            discord: {
+                enabled: true,
+                channel: '909654880669560902'
+            },
 
-    //Shared Configuration
-    prefix: '!',
-    embedColor: 'BLUE',
+            twitch: {
+                enabled: true,
+                channel: '924332370860052541'
+            }
+        },
+
+        embed: {
+            color: 'BLUE',
+            footer: 'Hypnotic Development',
+            logo: 'https://hypnoticsiege.net/images/uploads/logo.png'
+        }
+    },
+
+    twitch: {
+        oauth: 'oauth:1sy6feu1mdrs3mktj7b6vqvx5o9x9n', //Get yours at https://twitchapps.com/tmi/
+        channels: ['hypnoticsiege'],
+        username: 'hypnoticsiege'
+    },
+
+    shared: {
+        prefix: '!',
+    }
 }

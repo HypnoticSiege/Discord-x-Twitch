@@ -1,13 +1,12 @@
 const parse = require('parse-duration')
 const Discord = require("discord.js");
-const config = require("../config");
 const vcs = new Map()
 
 module.exports = (client, oldState, newState) => {
-    const log = client.channels.cache.get(config.DiscordLogs);
+    const log = client.channels.cache.get(client.config.discord.logs.discord.channel);
     if (!log) return
     const embed = new Discord.MessageEmbed()
-        .setColor(`${config.embedColor}`)
+        .setColor(`${client.config.discord.embed.color}`)
         .setAuthor('Voice Status Update!')
         .setTimestamp()
     if (oldState.serverDeaf !== newState.serverDeaf && newState.serverDeaf) log.send(embed.setDescription(`**${newState.member.user.tag}** Was Server Deafened!`))

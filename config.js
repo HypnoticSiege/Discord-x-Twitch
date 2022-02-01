@@ -1,6 +1,6 @@
 module.exports = {
     discord: {
-        token: "YOUR-TOKEN-HERE", //Get yours at https://discord.com/developers/applications/
+        token: "NzgxMTY0MjE4NjYxMzM5MTc2.X75p3w.6odNShMFbnQ9MtWoCZynGLL7H1w", //Get yours at https://discord.com/developers/applications/
 
         logs: {
             discord: {
@@ -22,12 +22,20 @@ module.exports = {
     },
 
     twitch: {
-        oauth: 'oauth:YOUR-OAUTH', //Get yours at https://twitchapps.com/tmi/
+        oauth: 'oauth:tghdt7v4zwveds5i5j6z0ze7f6x4kd', //Get yours at https://twitchapps.com/tmi/
         channels: ['hypnoticsiege'],
         username: 'hypnoticsiege'
     },
 
     shared: {
         prefix: '!',
-    }
+    },
+
+    dashboard: {
+        clientID: '781164218661339176',
+        clientSecret: 'Z9KPsuI__TJhsazPnXsDtBo0Biw2Yxfb',
+        domain: 'http://localhost',
+        usingCustomDomain: false,
+        port: 80
+    },
 }

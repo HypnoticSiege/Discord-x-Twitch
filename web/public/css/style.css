@@ -1,0 +1,26 @@
+
+html,
+body {
+    height: 100%;
+}
+
+body.dark {
+  background-color: var(--dark);
+  color: var(--light);
+}
+body.dark > nav.mb-1.navbar.navbar-expand-lg.navbar-dark.primary-color {
+  background-color: #0d47a1!important;
+}
+
+body.dark > form.text-center.border.p-5.z-depth-5 {
+  border: 1px solid #212121 !important;
+}
+
+h4.modal-title.w-100.font-weight-bold {
+  color: var(--dark) !important;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }

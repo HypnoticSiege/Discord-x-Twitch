@@ -13,20 +13,4 @@ To install **Discord x Twitch** you can follow the steps below!
 5. Configure ```config.js``` to your needs!
 6. Run ```Starter.bat``` and your bot should be Online!
 
-# File Directory 
->root
-- bot.js (Main File that runs Bot)
-- config.js (Bot Configuration)
-
->commands
-- base.js (Base Discord Command to make your own!)
-- count.js (Simple Count Command)
-
->events 
-- All are Events that happen in Discord. If you want to remove an event to be logged, just delete the file!
-
->twitch_cmds
-- base.js (Base Twitch Command to make your own!)
-- ping.js (Ping Command)
-
 >Panel (COMING SOON)
